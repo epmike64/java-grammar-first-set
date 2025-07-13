@@ -6,7 +6,7 @@ import com.flint.ebnf.RuleItemId;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Grp implements RuleItem {
+public class Grp extends RuleItem {
 
 	public final String name = "group_" + RuleItemId.getNextId();
 	private final List<RuleItem> ruleItems = new ArrayList<>();
@@ -15,7 +15,8 @@ public class Grp implements RuleItem {
 		ruleItems.addAll(List.of(rhsSymbols));
 	}
 
-	public Logic getLogic() {
-		return Logic.Group;
+	public int getLogic() {
+		assert (getLogic() & Logic.Alternative) == 0;
+		return Logic.Group | getLogic();
 	}
 }

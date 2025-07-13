@@ -17,5 +17,7 @@ public class MikesEBNFGramSim {
 
       P p = GF.getP("S");
       p.addR(a, GF.opt(S), b);
+
+
 	}
 }

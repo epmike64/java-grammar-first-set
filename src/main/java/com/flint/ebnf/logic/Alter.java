@@ -12,7 +12,7 @@ public class Alter extends RuleItem {
 		this.right = right;
 	}
 
-	public Logic getLogic() {
+	public int getLogic() {
 		return Logic.Alternative;
 	}
 }
